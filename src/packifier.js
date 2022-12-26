@@ -105,7 +105,8 @@ export default class Packifier {
         if ((bitflag & (1 << flagIter)) !== 0) {
           data[pre[totalFlagIter]] = packet[++i];
         }
-      } while (flagIter++ < segmentationThreshold && ++totalFlagIter);
+        ++totalFlagIter;
+      } while (flagIter++ < segmentationThreshold);
     }
  
     return data;
