@@ -1,6 +1,6 @@
 Serializes (dirty) objects into arrays using a known schema
 
-- <a href="api_docs">API docs</a> 
+- <a href="#api_docs">API docs</a> 
 
 ## Installation
 
@@ -14,17 +14,17 @@ Vanilla HTML:
 
 CommonJS:
 ```js
-const Quadtree = require("./path/to/packifier.min.js");
+const Packifier = require("./path/to/packifier.min.js");
 
-const quadtree = new Quadtree(...);
+const packer = new Packifier(...);
 ```
 
 ESM:
 ```html
 <script type="module">
-  import { Quadtree } from "./path/to/packifier.min.mjs";
+  import { Packifier } from "./path/to/packifier.min.mjs";
 
-  const quadtree = new Quadtree(...);
+  const packer = new Packifier(...);
 </script>
 ```
 
@@ -172,9 +172,7 @@ const packet = packer.pack(data, flags);
 
 Deserialize packet.
 
-- `@param {Array} packet` - item to remove; Item must currently be in a quadtree
-
-**!Important:** packet must be packed using the identical schema.
+- `@param {Array} packet` - packet to deserialize; **!Important:** packet must have been packed from an identical schema.
 
 ```js
 const data = packer.unpack(packet);
