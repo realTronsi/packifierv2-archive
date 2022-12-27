@@ -67,7 +67,7 @@ The ideal value must be measured empirically. However for the majority of cases,
 
 Preconditions in the schema should be ordered first to last from most frequently dirty to least frequently dirty.
 
-Example with a player object, where their position changes often but their health does not:
+Example with a video game player, where their position changes often but their health does not:
 
 ```js
 // bad
@@ -154,16 +154,18 @@ Serialize data.
 
 ```js
 const data = {
-  foo: 1,
-  bar: 2
+  name: "foo",
+  x: 10,
+  y: 20
 };
 
 const flags = {
-  foo: false,
-  bar: true
+  x: false,
+  y: true
 }
 
 const packet = packer.pack(data, flags);
+// [0, "foo", 0b10, 20]
 ```
 
 <hr>
@@ -176,6 +178,7 @@ Deserialize packet.
 
 ```js
 const data = packer.unpack(packet);
+// { name: "foo", y: 20 }
 ```
 
 <br><hr>
