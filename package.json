@@ -1,5 +1,6 @@
 {
   "name": "packifier",
+  "type": "module",
   "version": "1.0.1",
   "scripts": {
     "build": "npm run build-umd & npm run build-esm",
