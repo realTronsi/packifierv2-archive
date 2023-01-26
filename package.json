@@ -1,5 +1,6 @@
 {
   "name": "packifier",
+  "main": "./src/packifier.js",
   "type": "module",
   "version": "1.0.1",
   "scripts": {
